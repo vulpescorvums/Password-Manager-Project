@@ -14,8 +14,8 @@ from cryptography.hazmat.primitives import hashes
 def login(username, password):
 
     # Connect to the database
-    cnx = mysql.connector.connect(user='root', password="#!y%f76$v33aXU", #os.environ.get('MYSQL_PASSWORD')
-                                  host='localhost', database='account_info') 
+    cnx = mysql.connector.connect(user='ENTER_MYSQL_USERNAME', password='ENTER_MYSQL_PASSWORD', #os.environ.get('MYSQL_PASSWORD')
+                                  host='ENTER_MYSQL_HOST', database='ENTER_MYSQL_DATABASE') 
 
     # Create a cursor object
     cursor = cnx.cursor()
@@ -100,8 +100,9 @@ def get_stored_accounts(key, iv, id):
 
 # function to add a new account
 def add_new_account(new_username, new_password, new_email, key, iv, id, add_account_window):
-    cnx = mysql.connector.connect(user='root', password="#!y%f76$v33aXU",#os.environ.get('MYSQL_PASSWORD'),
-                                  host='localhost', database='account_info')
+    # Connect to the database
+    cnx = mysql.connector.connect(user='ENTER_MYSQL_USERNAME', password='ENTER_MYSQL_PASSWORD', #os.environ.get('MYSQL_PASSWORD')
+                                  host='ENTER_MYSQL_HOST', database='ENTER_MYSQL_DATABASE')
 
     # Create a cursor object
     cursor = cnx.cursor()
@@ -123,8 +124,9 @@ def add_new_account(new_username, new_password, new_email, key, iv, id, add_acco
     return {"message": "Stored account created successfully."}, 200
 
 def edit_account(new_username, new_password, new_email, key, iv, id, accountnum, edit_account_window):
-    cnx = mysql.connector.connect(user='root', password="#!y%f76$v33aXU",
-                                  host='localhost', database='account_info')
+    # Connect to the database
+    cnx = mysql.connector.connect(user='ENTER_MYSQL_USERNAME', password='ENTER_MYSQL_PASSWORD', #os.environ.get('MYSQL_PASSWORD')
+                                  host='ENTER_MYSQL_HOST', database='ENTER_MYSQL_DATABASE')
 
     # Create a cursor object
     cursor = cnx.cursor()
@@ -164,8 +166,9 @@ def delete_account(accountnum):
         cnx.commit()
 
 def delete_null_rows():
-    cnx = mysql.connector.connect(user='root', password="#!y%f76$v33aXU", host='localhost', database='account_info')
-
+    # Connect to the database
+    cnx = mysql.connector.connect(user='ENTER_MYSQL_USERNAME', password='ENTER_MYSQL_PASSWORD', #os.environ.get('MYSQL_PASSWORD')
+                                  host='ENTER_MYSQL_HOST', database='ENTER_MYSQL_DATABASE')
     # Create a cursor object
     cursor = cnx.cursor()
 
@@ -189,8 +192,8 @@ def register(password, username, register_window):
         return
    
     # Connect to the database
-    cnx = mysql.connector.connect(user='root', password='#!y%f76$v33aXU',
-                              host='localhost', database='account_info')
+    cnx = mysql.connector.connect(user='ENTER_MYSQL_USERNAME', password='ENTER_MYSQL_PASSWORD', #os.environ.get('MYSQL_PASSWORD')
+                                  host='ENTER_MYSQL_HOST', database='ENTER_MYSQL_DATABASE')
 
     # Create a cursor object
     cursor = cnx.cursor()
